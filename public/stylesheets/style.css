@@ -1,8 +1,103 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {text-align: center;}
+nav {text-align: center;}
+main {
+    margin: 0 auto;
+    width: 480px;
+}
+
+input[type=text], input[type=submit] {
+    font-size: 150%;
+}
+input[type=text] {
+    width: 100%;
+    margin: 5px auto;
+}
+
+/* for quiz.html */
+.correct {
+  border: 3px solid #0c8725;
+  border-radius: 3px;
+  background-color: lightgreen;
+}
+
+
+/* for cards.html */
+
+.card-container {
+  width: 94vw;
+  max-width: 420px;
+  height: 180px;
+  margin: 15px auto;
+  perspective: 1000;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front placed on top of back */
+.front {
+  z-index: 2;
+}
+
+/* back flipped out of view */
+.back {
+  transform: rotateY(180deg);
+}
+
+.clicker {
+    transform: rotateY(180deg);
+  }
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.en {border-color: #69f !important;}
+.kr {border-color: #c00 !important;}
+
+.card {
+    display: flex;
+    justify-content: center;
+    text-align: center;        /* fixes issue with longer cards */
+    align-items: center;
+    font-size: 30px;
+    border: 2vw;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 410px;
+    height: 170px;
+}
+
+
+@media (min-width: 500px) and (orientation: landscape) { 
+  
+  .card-container {
+    width: 420px;
+    margin: 15px auto;
+
+  }
+  
+  .card {
+    
+    border: 5px solid;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 410px    
+  }
 }
